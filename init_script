@@ -1,0 +1,9 @@
+#!/bin/bash
+#This script is executed every time your instance is spawned.
+export ip=192.168.1.1
+alias ga="git add *"
+alias gc="git commit -m"
+alias gp="git push"
+alias scantcp="nmap -p- -T4 -A $ip -oA Nmap/Initial"
+alias scanudp="nmap -p- -sU -sV -T4 $ip -oA Nmap/UDP"
+alias webscan="nikto -h http://$ip/"
