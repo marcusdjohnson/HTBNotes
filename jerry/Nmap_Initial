@@ -1,0 +1,4 @@
+# Nmap 7.80 scan initiated Mon Nov 16 19:22:03 2020 as: nmap -p- -T4 -A -oG Nmap_Initial 10.129.1.110
+Host: 10.129.1.110 ()	Status: Up
+Host: 10.129.1.110 ()	Ports: 8080/open/tcp//http//Apache Tomcat|Coyote JSP engine 1.1/	Ignored State: filtered (65534)	Seq Index: 259	IP ID Seq: Incremental
+# Nmap done at Mon Nov 16 19:24:53 2020 -- 1 IP address (1 host up) scanned in 171.11 seconds

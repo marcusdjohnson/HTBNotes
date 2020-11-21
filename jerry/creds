@@ -1,0 +1,2 @@
+from Nikto scan
+ Default account found for 'Tomcat Manager Application' at /manager/html (ID 'tomcat', PW 's3cret'). Apache Tomcat

