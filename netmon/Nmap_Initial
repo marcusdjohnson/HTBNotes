@@ -1,0 +1,2 @@
+# Nmap 7.80 scan initiated Fri Nov 20 20:12:50 2020 as: nmap -p- -T4 -A -oG Nmap_Initial
+# Nmap done at Fri Nov 20 20:12:51 2020 -- 0 IP addresses (0 hosts up) scanned in 0.75 seconds
