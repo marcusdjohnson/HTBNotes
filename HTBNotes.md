@@ -1,4 +1,4 @@
-*HTB NOTES
+*HTB ACADEMY NOTES
 
 ** Learning mindset
    *** principals of programming languages

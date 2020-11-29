@@ -1,0 +1,41 @@
+# Nmap 7.91 scan initiated Thu Nov 26 21:33:55 2020 as: nmap -p- -T4 -v -A -oA Nmap_Initial 10.129.50.110
+Nmap scan report for 10.129.50.110
+Host is up (0.038s latency).
+Not shown: 65529 filtered ports
+PORT      STATE SERVICE  VERSION
+135/tcp   open  msrpc    Microsoft Windows RPC
+5985/tcp  open  upnp     Microsoft IIS httpd
+8080/tcp  open  upnp     Microsoft IIS httpd
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=Windows Device Portal
+|_http-server-header: Microsoft-HTTPAPI/2.0
+|_http-title: Site doesn't have a title.
+29817/tcp open  unknown
+29819/tcp open  arcserve ARCserve Discovery
+29820/tcp open  unknown
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port29820-TCP:V=7.91%I=7%D=11/26%Time=5FC065F4%P=x86_64-pc-linux-gnu%r(
+SF:NULL,10,"\*LY\xa5\xfb`\x04G\xa9m\x1c\xc9}\xc8O\x12")%r(GenericLines,10,
+SF:"\*LY\xa5\xfb`\x04G\xa9m\x1c\xc9}\xc8O\x12")%r(Help,10,"\*LY\xa5\xfb`\x
+SF:04G\xa9m\x1c\xc9}\xc8O\x12")%r(JavaRMI,10,"\*LY\xa5\xfb`\x04G\xa9m\x1c\
+SF:xc9}\xc8O\x12");
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows XP|7 (89%)
+OS CPE: cpe:/o:microsoft:windows_xp::sp3 cpe:/o:microsoft:windows_7
+Aggressive OS guesses: Microsoft Windows XP SP3 (89%), Microsoft Windows XP SP2 (86%), Microsoft Windows 7 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: Host: PING; OS: Windows; CPE: cpe:/o:microsoft:windows
+
+TRACEROUTE (using port 8080/tcp)
+HOP RTT      ADDRESS
+1   37.83 ms 10.10.14.1
+2   38.97 ms 10.129.50.110
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Thu Nov 26 21:36:43 2020 -- 1 IP address (1 host up) scanned in 168.29 seconds
