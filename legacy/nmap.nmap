@@ -1,0 +1,50 @@
+# Nmap 7.91 scan initiated Mon Nov 30 20:33:32 2020 as: nmap -p1-1000 -v -A -T4 -oA nmap 10.10.10.4
+Nmap scan report for 10.10.10.4
+Host is up (0.043s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE      VERSION
+139/tcp open  netbios-ssn  Microsoft Windows netbios-ssn
+445/tcp open  microsoft-ds Windows XP microsoft-ds
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose
+Running (JUST GUESSING): Microsoft Windows XP|2003|2000 (90%)
+OS CPE: cpe:/o:microsoft:windows_xp cpe:/o:microsoft:windows_server_2003 cpe:/o:microsoft:windows_2000::sp4
+Aggressive OS guesses: Microsoft Windows XP SP2 or Windows Small Business Server 2003 (90%), Microsoft Windows 2000 SP4 or Windows XP SP2 or SP3 (88%), Microsoft Windows XP SP2 or SP3 (88%), Microsoft Windows XP SP2 (87%), Microsoft Windows XP SP3 (87%), Microsoft Windows XP Professional SP2 (86%), Microsoft Windows 2000 SP1 (86%), Microsoft Windows Server 2003 (85%), Microsoft Windows 2000 SP4 (85%), Microsoft Windows XP Professional SP3 (85%)
+No exact OS matches for host (test conditions non-ideal).
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=250 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OSs: Windows, Windows XP; CPE: cpe:/o:microsoft:windows, cpe:/o:microsoft:windows_xp
+
+Host script results:
+|_clock-skew: mean: -3h56m27s, deviation: 1h24m50s, median: -4h56m27s
+| nbstat: NetBIOS name: LEGACY, NetBIOS user: <unknown>, NetBIOS MAC: 00:50:56:b9:fc:9c (VMware)
+| Names:
+|   LEGACY<00>           Flags: <unique><active>
+|   HTB<00>              Flags: <group><active>
+|   LEGACY<20>           Flags: <unique><active>
+|   HTB<1e>              Flags: <group><active>
+|   HTB<1d>              Flags: <unique><active>
+|_  \x01\x02__MSBROWSE__\x02<01>  Flags: <group><active>
+| smb-os-discovery: 
+|   OS: Windows XP (Windows 2000 LAN Manager)
+|   OS CPE: cpe:/o:microsoft:windows_xp::-
+|   Computer name: legacy
+|   NetBIOS computer name: LEGACY\x00
+|   Workgroup: HTB\x00
+|_  System time: 2020-12-01T00:37:32+02:00
+| smb-security-mode: 
+|   account_used: guest
+|   authentication_level: user
+|   challenge_response: supported
+|_  message_signing: disabled (dangerous, but default)
+|_smb2-time: Protocol negotiation failed (SMB2)
+
+TRACEROUTE (using port 445/tcp)
+HOP RTT      ADDRESS
+1   40.20 ms 10.10.14.1
+2   41.50 ms 10.10.10.4
+
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+# Nmap done at Mon Nov 30 20:34:50 2020 -- 1 IP address (1 host up) scanned in 78.69 seconds

@@ -1,0 +1,5 @@
+# Nmap 7.91 scan initiated Mon Nov 30 20:33:32 2020 as: nmap -p1-1000 -v -A -T4 -oA nmap 10.10.10.4
+# Ports scanned: TCP(1000;1-1000) UDP(0;) SCTP(0;) PROTOCOLS(0;)
+Host: 10.10.10.4 ()	Status: Up
+Host: 10.10.10.4 ()	Ports: 139/open/tcp//netbios-ssn//Microsoft Windows netbios-ssn/, 445/open/tcp//microsoft-ds//Windows XP microsoft-ds/	Ignored State: filtered (998)	Seq Index: 250	IP ID Seq: Incremental
+# Nmap done at Mon Nov 30 20:34:50 2020 -- 1 IP address (1 host up) scanned in 78.69 seconds

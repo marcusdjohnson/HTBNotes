@@ -1,0 +1,4 @@
+# Nmap 7.91 scan initiated Mon Nov 30 20:32:22 2020 as: nmap -p- -T4 -v -A -oA Nmap_Initial
+Read data files from: /usr/bin/../share/nmap
+WARNING: No targets were specified, so 0 hosts scanned.
+# Nmap done at Mon Nov 30 20:32:22 2020 -- 0 IP addresses (0 hosts up) scanned in 0.92 seconds

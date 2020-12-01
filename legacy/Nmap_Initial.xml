@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE nmaprun>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?>
+<!-- Nmap 7.91 scan initiated Mon Nov 30 20:32:22 2020 as: nmap -p- -T4 -v -A -oA Nmap_Initial -->
+<nmaprun scanner="nmap" args="nmap -p- -T4 -v -A -oA Nmap_Initial" start="1606786342" startstr="Mon Nov 30 20:32:22 2020" version="7.91" xmloutputversion="1.05">
+<scaninfo type="syn" protocol="tcp" numservices="65535" services="1-65535"/>
+<verbose level="1"/>
+<debugging level="0"/>
+<taskbegin task="NSE" time="1606786342"/>
+<taskend task="NSE" time="1606786342"/>
+<taskbegin task="NSE" time="1606786342"/>
+<taskend task="NSE" time="1606786342"/>
+<taskbegin task="NSE" time="1606786342"/>
+<taskend task="NSE" time="1606786342"/>
+<taskbegin task="NSE" time="1606786342"/>
+<taskend task="NSE" time="1606786342"/>
+<taskbegin task="NSE" time="1606786342"/>
+<taskend task="NSE" time="1606786342"/>
+<taskbegin task="NSE" time="1606786342"/>
+<taskend task="NSE" time="1606786342"/>
+<runstats><finished time="1606786342" timestr="Mon Nov 30 20:32:22 2020" summary="Nmap done at Mon Nov 30 20:32:22 2020; 0 IP addresses (0 hosts up) scanned in 0.92 seconds" elapsed="0.92" exit="success"/><hosts up="0" down="0" total="0"/>
+</runstats>
+</nmaprun>
