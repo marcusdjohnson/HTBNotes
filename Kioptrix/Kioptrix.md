@@ -27,6 +27,8 @@ kioptrix
 ![meta2](images/meta2.png)
 
 # initial point of acces
+samba trans2open
+
 ##    -user proof
     
 # Root access
