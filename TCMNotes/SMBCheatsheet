@@ -1,0 +1,11 @@
+how smb shares
+smbmap -H 127.0.0.1
+
+smbmap -H 127.0.0.1 -u uname -p passwd
+
+smbclient -L ////127.0.0.1//
+
+smbclient -L ////127.0.0.1// -u user -p passwd
+
+recursively list folder contents
+smbmap -R folder -H 127.0.0.1
