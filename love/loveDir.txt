@@ -1,0 +1,82 @@
+===============================================================
+Gobuster v3.1.0
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
+===============================================================
+[+] Url:                     http://love.htb
+[+] Method:                  GET
+[+] Threads:                 10
+[+] Wordlist:                /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+[+] Negative Status codes:   404
+[+] User Agent:              gobuster/3.1.0
+[+] Timeout:                 10s
+===============================================================
+2021/05/05 21:44:57 Starting gobuster in directory enumeration mode
+===============================================================
+/images               (Status: 301) [Size: 330] [--> http://love.htb/images/]
+/Images               (Status: 301) [Size: 330] [--> http://love.htb/Images/]
+/admin                (Status: 301) [Size: 329] [--> http://love.htb/admin/] 
+/plugins              (Status: 301) [Size: 331] [--> http://love.htb/plugins/]
+/includes             (Status: 301) [Size: 332] [--> http://love.htb/includes/]
+/examples             (Status: 503) [Size: 398]                                
+/dist                 (Status: 301) [Size: 328] [--> http://love.htb/dist/]    
+/licenses             (Status: 403) [Size: 417]                                
+/IMAGES               (Status: 301) [Size: 330] [--> http://love.htb/IMAGES/]  
+/%20                  (Status: 403) [Size: 298]                                
+/Admin                (Status: 301) [Size: 329] [--> http://love.htb/Admin/]   
+/*checkout*           (Status: 403) [Size: 298]                                
+/Plugins              (Status: 301) [Size: 331] [--> http://love.htb/Plugins/] 
+/phpmyadmin           (Status: 403) [Size: 298]                                
+/webalizer            (Status: 403) [Size: 298]                                
+/*docroot*            (Status: 403) [Size: 298]                                
+/*                    (Status: 403) [Size: 298]                                
+/con                  (Status: 403) [Size: 298]                                
+/http%3A              (Status: 403) [Size: 298]                                
+/Includes             (Status: 301) [Size: 332] [--> http://love.htb/Includes/]
+/**http%3a            (Status: 403) [Size: 298]                                
+/*http%3A             (Status: 403) [Size: 298]                                
+/aux                  (Status: 403) [Size: 298]                                
+/Dist                 (Status: 301) [Size: 328] [--> http://love.htb/Dist/]    
+/**http%3A            (Status: 403) [Size: 298]                                
+/%C0                  (Status: 403) [Size: 298]                                
+/server-status        (Status: 403) [Size: 417]                                
+/%3FRID%3D2671        (Status: 403) [Size: 298]                                
+/devinmoore*          (Status: 403) [Size: 298]                                
+/200109*              (Status: 403) [Size: 298]                                
+/*sa_                 (Status: 403) [Size: 298]                                
+/*dc_                 (Status: 403) [Size: 298]                                
+/%D8                  (Status: 403) [Size: 298]                                
+/%CF                  (Status: 403) [Size: 298]                                
+/%CE                  (Status: 403) [Size: 298]                                
+/%CD                  (Status: 403) [Size: 298]                                
+/%CC                  (Status: 403) [Size: 298]                                
+/%CB                  (Status: 403) [Size: 298]                                
+/%CA                  (Status: 403) [Size: 298]                                
+/%D0                  (Status: 403) [Size: 298]                                
+/%D1                  (Status: 403) [Size: 298]                                
+/%D7                  (Status: 403) [Size: 298]                                
+/%D6                  (Status: 403) [Size: 298]                                
+/%D5                  (Status: 403) [Size: 298]                                
+/%D4                  (Status: 403) [Size: 298]                                
+/%D2                  (Status: 403) [Size: 298]                                
+/%D3                  (Status: 403) [Size: 298]                                
+/%C9                  (Status: 403) [Size: 298]                                
+/%C8                  (Status: 403) [Size: 298]                                
+/%C1                  (Status: 403) [Size: 298]                                
+/%C2                  (Status: 403) [Size: 298]                                
+/%C7                  (Status: 403) [Size: 298]                                
+/%C5                  (Status: 403) [Size: 298]                                
+/%C6                  (Status: 403) [Size: 298]                                
+/%C4                  (Status: 403) [Size: 298]                                
+/%C3                  (Status: 403) [Size: 298]                                
+/%D9                  (Status: 403) [Size: 298]                                
+/%DE                  (Status: 403) [Size: 298]                                
+/%DF                  (Status: 403) [Size: 298]                                
+/%DD                  (Status: 403) [Size: 298]                                
+/%DB                  (Status: 403) [Size: 298]                                
+/login%3f             (Status: 403) [Size: 298]                                
+/%22julie%20roehm%22  (Status: 403) [Size: 298]                                
+/%22james%20kim%22    (Status: 403) [Size: 298]                                
+/%22britney%20spears%22 (Status: 403) [Size: 298]                              
+===============================================================
+2021/05/05 22:07:46 Finished
+===============================================================
